@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.nuxeo</groupId>
+  <artifactId>nuxeo-build-tools</artifactId>
+  <version>1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>Nuxeo Build Tools</name>
+  <description>Maven Build Tools is a Configuration Jar file that can be used with various plugins.</description>
+  <url>https://github.com/nuxeo/nuxeo-build-tools</url>
+  <licenses>
+    <license>
+      <name>Apache License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+    </license>
+  </licenses>
+
+  <scm>
+    <connection>scm:git:git://github.com/nuxeo/nuxeo-build-tools.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com/nuxeo/nuxeo-build-tools.git</developerConnection>
+    <url>https://github.com/nuxeo/nuxeo-build-tools</url>
+  </scm>
+
+  <issueManagement>
+    <system>jira</system>
+    <url>http://jira.nuxeo.com/browse/NXP</url>
+  </issueManagement>
+
+  <distributionManagement>
+    <repository>
+      <id>maven-public-lts</id>
+      <url>https://packages.nuxeo.com/repository/maven-public-lts/</url>
+    </repository>
+  </distributionManagement>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <repositories>
+    <repository>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+        <updatePolicy>always</updatePolicy>
+      </snapshots>
+      <id>maven-public-lts</id>
+      <url>https://packages.nuxeo.com/repository/maven-public-lts/</url>
+    </repository>
+  </repositories>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+        <updatePolicy>always</updatePolicy>
+      </snapshots>
+      <id>maven-public-lts</id>
+      <url>https://packages.nuxeo.com/repository/maven-public-lts/</url>
+    </pluginRepository>
+  </pluginRepositories>
+
+  <build>
+    <defaultGoal>install</defaultGoal>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-clean-plugin</artifactId>
+        <version>3.4.0</version>
+      </plugin>
+      <plugin>
+        <groupId>com.diffplug.spotless</groupId>
+        <artifactId>spotless-maven-plugin</artifactId>
+        <version>2.43.0</version>
+        <configuration>
+          <pom>
+            <!-- will sort following https://maven.apache.org/developers/conventions/code.html#pom-code-convention -->
+            <sortPom>
+              <expandEmptyElements>false</expandEmptyElements>
+            </sortPom>
+          </pom>
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>check</goal>
+            </goals>
+            <phase>validate</phase>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.4.2</version>
+        <configuration>
+          <archive>
+            <manifestEntries>
+              <Built-By>${user.name}</Built-By>
+              <Build-Time>${maven.build.timestamp}</Build-Time>
+              <Created-By>Nuxeo</Created-By>
+            </manifestEntries>
+          </archive>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-install-plugin</artifactId>
+        <version>3.1.2</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-deploy-plugin</artifactId>
+        <version>3.1.2</version>
+      </plugin>
+    </plugins>
+  </build>
+</project>
