@@ -1,7 +1,7 @@
 # nuxeo-build-tools
 Nuxeo Build Tools
 
-## Use nuxeo-build-tools artefact with spotless in your project
+## Use nuxeo-build-tools artifact with spotless in your project
 
 Configure the Spotless Maven Plugin in your project pom with nuxeo-build-tools content:
 
@@ -74,7 +74,7 @@ git commit -a -m "Release 2"
 git tag -a -m "Release 2" v2
 ```
 
-Then deploy the maven artefacts:
+Then deploy the maven artifacts:
 
 ```bash
 mvn clean deploy -DskipTests -DaltDeploymentRepository=maven-public-releases::default::PUBLIC_URL
