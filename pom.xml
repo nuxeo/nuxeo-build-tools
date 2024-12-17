@@ -4,7 +4,7 @@
 
   <groupId>org.nuxeo</groupId>
   <artifactId>nuxeo-build-tools</artifactId>
-  <version>3-SNAPSHOT</version>
+  <version>3</version>
   <packaging>jar</packaging>
 
   <name>Nuxeo Build Tools</name>
