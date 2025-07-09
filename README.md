@@ -13,7 +13,7 @@ Configure the Spotless Maven Plugin in your project pom with nuxeo-build-tools c
       <plugin>
           <groupId>com.diffplug.spotless</groupId>
           <artifactId>spotless-maven-plugin</artifactId>
-          <version>2.43.0</version>
+          <version>2.45.0</version>
           <dependencies>
             <dependency>
               <groupId>org.nuxeo</groupId>
@@ -29,6 +29,7 @@ Configure the Spotless Maven Plugin in your project pom with nuxeo-build-tools c
                 <spacesPerTab>4</spacesPerTab>
               </indent>
               <removeUnusedImports />
+              <removeWildcardImports />
               <importOrder>
                 <file>nuxeo.importorder</file>
               </importOrder>
