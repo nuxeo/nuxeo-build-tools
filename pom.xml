@@ -72,12 +72,12 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-clean-plugin</artifactId>
-        <version>3.4.0</version>
+        <version>3.5.0</version>
       </plugin>
       <plugin>
         <groupId>com.diffplug.spotless</groupId>
         <artifactId>spotless-maven-plugin</artifactId>
-        <version>2.43.0</version>
+        <version>2.46.1</version>
         <configuration>
           <pom>
             <!-- will sort following https://maven.apache.org/developers/conventions/code.html#pom-code-convention -->
@@ -112,12 +112,12 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-install-plugin</artifactId>
-        <version>3.1.2</version>
+        <version>3.1.4</version>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-deploy-plugin</artifactId>
-        <version>3.1.2</version>
+        <version>3.1.4</version>
       </plugin>
     </plugins>
   </build>
